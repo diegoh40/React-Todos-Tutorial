@@ -15,7 +15,7 @@
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
-get clone https://github.com/diegoh40/React-Todo-List.git
+https://github.com/diegoh40/React-Todos-Tutorial.git 
 
 ### Prerequisites
 
