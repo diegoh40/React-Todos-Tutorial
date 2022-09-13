@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
 import React, { useState, useEffect } from 'react';
 import styles from './TodoItem.module.css';
 
