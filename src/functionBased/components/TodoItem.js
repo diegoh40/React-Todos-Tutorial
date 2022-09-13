@@ -35,6 +35,7 @@ const TodoItem = (props) => {
   }
 
   useEffect(() => () => {
+    // eslint-disable-next-line no-console
     console.log('Cleaning up...');
   }, []);
 
@@ -47,7 +48,7 @@ const TodoItem = (props) => {
           checked={completed}
           onChange={() => props.handleChangeProps(id)}
         />
-        <button onClick={() => props.deleteTodoProps(id)}>Delete</button>
+        <button type="button" onClick={() => props.deleteTodoProps(id)}>Delete</button>
         <span style={completed ? completedStyle : null}>{title}</span>
       </div>
       <input

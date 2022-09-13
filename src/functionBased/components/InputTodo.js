@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
 import React, { useState } from 'react';
 
+/* eslint-disable react/state-in-constructor */
 const InputTodo = (props) => {
   const [inputText, setInputText] = useState({
     title: '',
@@ -13,15 +13,17 @@ const InputTodo = (props) => {
       [e.target.name]: e.target.value,
     });
   };
-
+  const { title } = inputText;
   const handleSubmit = (e) => {
     e.preventDefault();
     if (inputText.title.trim()) {
-      props.addTodoProps(inputText.title);
+      // eslint-disable-next-line react/destructuring-assignment
+      props.addTodoProps(title);
       setInputText({
         title: '',
       });
     } else {
+      // eslint-disable-next-line no-alert
       alert('Please write item');
     }
   };
@@ -36,7 +38,7 @@ const InputTodo = (props) => {
         name="title"
         onChange={onChange}
       />
-      <button className="input-submit">Submit</button>
+      <button type="submit" className="input-submit">Submit</button>
     </form>
   );
 };

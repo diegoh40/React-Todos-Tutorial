@@ -9,14 +9,13 @@ import NotMatch from '../../pages/NotMatch';
 import Navbar from './Navbar';
 
 const TodoContainer = () => {
-  const [todos, setTodos] = useState(getInitialTodos());
-
   function getInitialTodos() {
     // getting stored items
     const temp = localStorage.getItem('todos');
     const savedTodos = JSON.parse(temp);
     return savedTodos || [];
   }
+  const [todos, setTodos] = useState(getInitialTodos());
 
   const handleChange = (id) => {
     setTodos((prevState) => prevState.map((todo) => {
@@ -49,6 +48,7 @@ const TodoContainer = () => {
     setTodos(
       todos.map((todo) => {
         if (todo.id === id) {
+          // eslint-disable-next-line no-param-reassign
           todo.title = updatedTitle;
         }
         return todo;

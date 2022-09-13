@@ -19,6 +19,7 @@ const SinglePage = () => {
   const { slug } = useParams();
   const aboutContent = aboutData.find((item) => item.slug === slug);
   const { title, description } = aboutContent;
+  // eslint-disable-next-line no-console
   console.log(useParams());
   return (
     <div>
